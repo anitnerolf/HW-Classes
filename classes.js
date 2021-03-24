@@ -1,168 +1,132 @@
-// class User {
-//     constructor(name, email) {
-//         this.name = name;
-//         this.email = email;
-//     }
-//     get userName() {
-//         return `${this.name}`;
-//     }
-//     set userName(value) {
-//         this.name = value;
-//     }
-//     get userEmail() {
-//         return `${this.email}`;
-//     }
-//     set userEmail(value) {
-//         this.email = value;
-//     }
 
-//     logIn() {
-//         console.log(`${this.name} has logged in.`);
-//     }
+//Detyra 1
 
-//     logOut() {
-//         console.log(`${this.name} has logged out.`);
+// class Circumference {
+//     constructor(r) {
+//         this.radius = r;
+//     }
+//     get circleRadius() {
+//         return this.radius;
+//     }
+//     set circleRadius(r) {
+//         this.radius = r;
+//     }
+//     get getDiameter() {
+//         return(2 * this.radius);
+//     }
+//     calculateContent() {
+//         return (Math.pow(this.radius, 2) * Math.PI);
+//     }
+//     calculateLengthOfCircumference() {
+//         return (Math.PI * 2 * this.radius);
 //     }
 // }
 
-// const user1 = new User('Jane', 'example@example.com');
-//const user2 = new User('Alice', 'example@example.com');
-// console.log(user1.name);
 
-// class Animal {
-//     constructor(name, gender, race) {
-//         this.name = name;
-//         this.gender = gender;
-//         this.race = race;
-//         this.speed = 0;
-//     }
-//     run(speed) {
-//         this.speed = speed;
+// const circle = new Circumference(5);
+// console.log("Radius of the circle is " + circle.circleRadius);
+// circle.circleRadius = 15;
+// console.log("We changed radius of the circle to " + circle.circleRadius);
+// console.log("Diameter of the circle is " + circle.getDiameter);
+// console.log("Content of the circle with radius " + circle.circleRadius + " is " + circle.calculateContent());
+// console.log("The length of circumference with radius " + circle.circleRadius + " is " + circle.calculateLengthOfCircumference());
 
-//     }
-//     stop() {
-//         this.speed = 0;
+//Detyra2
 
+// class RegularMarker {
+//     constructor(color, ink) {
+//         this.color = color;
+//         this.ink = ink;
 //     }
-// }
-
-// class Rabbit extends Animal {
-//     hide() {
-
+//     get Color() {
+//         return this.color;
 //     }
-//     stop() {
-//         super.stop();
-//         this.hide();
+//     set Color(color) {
+//         this.color = color;
 //     }
-// }
-
-// let rabbit = new Rabbit()
-
-// class PrintMachine {
-//     constructor(f_size, f_color, f_family) {
-//         this.fontSize = "font-size: " + f_size;
-//         this.color = "color: " + f_color;
-//         this.fontFamily = "font-family: "+ f_family;
+//     get Ink() {
+//         return this.ink;
 //     }
-//     print(text) {
-//         document.write("<p style=\"" + this.fontSize + "; " + this.fontFamily + "; " + this.color + "; " + "\">" + text + "</p>");
+//     set Ink(ink) {
+//         this.ink = ink;
 //     }
-// }
-
-// const text2 = new PrintMachine('100px', 'red', 'sans-serif');
-// text2.print('Florentina');
-
-
-// class mydate {
-//     constructor(day, month, year) {
-//         this.day = day;
-//         this.month = month;
-//         this.year = year;
-//     }
-//     getToday() {
-//         return this.day + ":" + this.month + ":" + this.year;
-//     }
-// }
-
-// class News {
-//     constructor(heading, text, tagArray, dateOfPub) {
-//         this.heading = heading;
-//         this.text = text;
-//         this.tagArray = tagArray;
-//         this.dateOfPub = dateOfPub;
-//         this.day = 0;
-//         this.month = 0;
-//         this.year = 0;
-//     }
-//     get today() {
-//         return this.day + ":" + this.month + ":" + this.year;
-//     }
-//     setToday(day, month, year) {
-//         this.day = day;
-//         this.month = month;
-//         this.year = year;
-//     }
-
-//     print() {
-//         if(this.day == this.dateOfPub.day && this.month == this.dateOfPub.month && this.year == this.dateOfPub.year) {
-//             document.write("<h1>" + this.heading + "</h1>");
-//             document.write("<p>" + this.text + "</p>");
-//             document.write("<p>" + this.tagArray + "</p>");
-//             document.write("<p> today </p>");
-//         } else if (this.dateOfPub.day < (this.day - 7) && this.month == this.dateOfPub.month && this.year == this.dateOfPub.year) {
-//             document.write("<h1>" + this.heading + "</h1>");
-//             document.write("<p>" + this.text + "</p>");
-//             document.write("<p>" + this.tagArray + "</p>");
-//             document.write("<p>" + (this.day - this.dateOfPub.day) + " days ago.</p>");
+//     writeText(text) {
+//         let len = 0;
+//         let letters = this.ink / 0.5;
+//         let text2 = "";
+//         for (let i = 0; i < text.length; i++) {
+//             if (text[i] != ' ')
+//                 len++;
+//         }
+//         if (len <= letters) {
+//             document.write("<p style=\"" + " color: " + this.color + "; " + "\">" + text + "</p>");
 //         } else {
-//             document.write("<h1>" + this.heading + "</h1>");
-//             document.write("<p>" + this.text + "</p>");
-//             document.write("<p>" + this.tagArray + "</p>");
-//             document.write("<p>" + this.dateOfPub.getToday() + "</p>");
+//             let j = 0;
+//             while (j < letters) {
+//                 text2 += text[j];
+//                 if (text[j] == ' ') {
+//                     letters += 1;
+//                 }
+//                 j++;
+//             }
+//             document.write("<p style=\"" + " color: " + this.color + "; " + "\">" + text2 + "</p>");
 //         }
 //     }
 // }
 
-// let date = new mydate(20, 3, 2021);
-// let array = ['news', 'me te rejat', 'free', 'blla'];
-// const text2 = new News('NEWS', 'Hello helloHello helloHello helloHello helloHello helloHello hello', array, date);
-// text2.setToday(22, 3, 2021);
-// text2.print();
+// const writeTextMarker = new RegularMarker('blue', 10);
+// writeTextMarker.writeText("Hello there, is anyone hearing me?????");
+
+// class RefillableMarker extends RegularMarker {
+//     refill(ink) {
+//         super.Ink = ink;
+//     }
+// }
+
+// const writeTextMarker2 = new RefillableMarker('green', 13);
+// writeTextMarker2.refill(5);
+// writeTextMarker2.writeText("Hello there, is anyone hearing me?????");
 
 
+// Detyra 3
 
-class circumference {
-    constructor() {
-//        this.radius = r;
-    }
-    get Radius() {
-        return (this.radius);
-    }
-    set Radius(Radius) {
-        this.radius = r;
-    }
-    get getDiameter() {
-        return(2 * this.radius);
-    }
-    calculateContent() {
-        return (Math.pow(this.radius) * Math.PI);
-    }
-    calculateLengthOfCircumference() {
-        return (Math.PI * 2 * this.radius);
-    }
-}
+// class Employee {
+//     constructor(name, age, city, salary) {
+//         this.name = name;
+//         this.age = age;
+//         this.city = city;
+//         this.salary = salary;
+//     }
+// }
 
+// let staff = [
+//         new Employee("Hasan", 35, "Prishtine", 400), 
+//         new Employee("Albiona", 28, "Prishtine", 350), 
+//         new Employee("Hysen", 25, "Ferizaj", 300), 
+//         new Employee("Blerina", 21, "Peje", 250)
+// ];
 
-const circle = new circumference();
-circle.Radius(5);
-console.log(circle.getRadius);
-console.log(circle.getDiameter);
-console.log(circle.calculateContent());
-console.log(circle.calculateLengthOfCircumference());
+// class EmpTable {
+//     constructor(listEmp) {
+//         this.listEmp = listEmp;
+//     }
+//     getHtml() {
+//         document.write("<table border='3'>")
+//         document.write("<thead><tr><th>Emri</th><th>Mosha</th><th>Qyteti</th><th>Rroga</th></tr></thead>")
+//         for (let i = 0; i < this.listEmp.length; i++) {
+//             document.write("<tr>");
+//             document.write("<td>" + this.listEmp[i].name + "</td>")
+//             document.write("<td>" + this.listEmp[i].age + "</td>")
+//             document.write("<td>" + this.listEmp[i].city + "</td>")
+//             document.write("<td>" + this.listEmp[i].salary + "€</td>")
+//             document.write("</tr>");
+//         }
+//         document.write("</table>") 
+//     }
+// }
 
-
-
-
+// const emptab = new EmpTable(staff);
+// emptab.getHtml();
 
 
 
